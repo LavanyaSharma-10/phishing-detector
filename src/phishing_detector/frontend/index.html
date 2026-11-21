@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Detector — Case File</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:wght@400;600&family=Caveat&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="corkboard">
+    <div class="folder-tab">
+      <span class="tab-label">CASE FILE</span>
+      <span class="tab-number">NO. 001 — PHISHING DIVISION</span>
+    </div>
+
+    <div class="desk">
+      <div class="report-card">
+        <div class="report-head">
+          <h1>Email Investigation</h1>
+          <p class="subhead">Paste the email below. Our analyst (a Logistic Regression model) will examine it for signs of phishing.</p>
+        </div>
+
+        <label class="field-label" for="email-input">EVIDENCE — EMAIL TEXT</label>
+        <textarea id="email-input" placeholder="Paste the suspicious email here..."></textarea>
+
+        <div class="controls">
+          <button class="stamp-button" id="check-button">Investigate</button>
+          <button class="ghost-button" id="clear-button">Clear</button>
+          <span class="loading hidden" id="loading-text">Examining evidence...</span>
+        </div>
+
+        <div class="error-box hidden" id="error-box"></div>
+
+        <div class="verdict-section hidden" id="verdict-section">
+          <div class="verdict-card">
+            <div class="stamp" id="verdict-stamp"></div>
+            <div class="verdict-details">
+              <div class="confidence-row">
+                <span>Confidence</span>
+                <span class="confidence-value" id="confidence-value"></span>
+              </div>
+              <div class="gauge-track">
+                <div class="gauge-fill" id="gauge-fill"></div>
+              </div>
+              <p class="verdict-note">Based on word patterns learned from thousands of prior emails.</p>
+            </div>
+          </div>
+
+          <div class="evidence-board">
+            <h2>Evidence Board <span class="chip-legend"><span class="dot red"></span>Phishing <span class="dot green"></span>Legit</span></h2>
+            <p class="evidence-sub">Words that most influenced this verdict</p>
+            <div class="evidence-list" id="evidence-list"></div>
+          </div>
+        </div>
+
+        <div class="case-notes">
+          <h3>Analyst's Notes</h3>
+          <ul>
+            <li><strong>Never share passwords or OTPs</strong> via email, regardless of urgency.</li>
+            <li>Hover over links before clicking — check where they actually lead.</li>
+            <li>This tool is a portfolio demo, not a substitute for real email security software.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
