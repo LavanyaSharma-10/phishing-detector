@@ -2,8 +2,6 @@
 
 A machine learning web app that classifies email text as **phishing/spam or legitimate**, and explains each decision by showing the words that influenced it most.
 
-![App screenshot](docs/screenshot.png)
-<!-- TODO: take a screenshot of the frontend making a prediction, save it as docs/screenshot.png -->
 
 ## Highlights
 
@@ -47,15 +45,14 @@ Only 104 phishing emails were missed, and 146 legitimate emails were wrongly fla
 
 ## Dataset
 
-TODO: name the dataset(s), link to the source, and say how many emails and what the class balance is.
-
+This project uses the [Phishing Email Dataset](https://www.kaggle.com/datasets/purusinghvi/email-spam-classification-dataset) from Kaggle.
 The raw data is **not included** in this repo because of its size. Download it from the source above and save it as `data/combined_data.csv`.
 
 ## Model
 
 - **Preprocessing:** lowercasing, URL normalization, stripping non-alphabetic characters
-- **Features:** TODO (e.g. TF-IDF on unigrams/bigrams)
-- **Classifier:** TODO (e.g. Logistic Regression)
+- - **Features:** TF-IDF on word unigrams and bigrams (top 20,000 features, English stop words removed, terms must appear in  at  least 3 emails and at most 90% of them)
+- **Classifier:** Logistic Regression
 - **Explainability:** the model's learned word weights are used to surface the top contributing words for each prediction
 
 The trained model and vectorizer are saved in `outputs/` so the app runs without retraining.
